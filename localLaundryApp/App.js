@@ -1,19 +1,21 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-import HomeScreen from './screens/HomeScreen';
+import { StatusBar } from "expo-status-bar";
+import { StyleSheet, Text, View } from "react-native";
+import { Provider } from "react-redux";
+import StackNavigator from "./StackNavigator";
+import store from "./store";
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <HomeScreen/>
+    <Provider store={store}>
+      <StackNavigator />
       <StatusBar style="auto" />
-    </View>
+    </Provider>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',    
+    backgroundColor: "#fff",
   },
 });
